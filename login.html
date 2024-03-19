@@ -97,7 +97,7 @@
 
     let form = document.getElementById("register");
 
-    let formData = JSON.parse(localStorage.getItem("refurbay-data")) || [];
+    let formData = JSON.parse(localStorage.getItem("Proryt-data")) || [];
 
     form.addEventListener("submit", ops);
 
@@ -122,7 +122,7 @@
           })
       }else{
         formData.push(obj);
-        localStorage.setItem("refurbay-data", JSON.stringify(formData));
+        localStorage.setItem("Proryt-data", JSON.stringify(formData));
         Swal.fire({
             position: "centre",
             icon: "success",
@@ -138,7 +138,7 @@
 
     // sing in code 
 
-    let formData1 = JSON.parse(localStorage.getItem("refurbay-data")) || [];
+    let formData1 = JSON.parse(localStorage.getItem("Proryt-data")) || [];
     let form1 = document.getElementById("login");
 
     form1.addEventListener("submit", up);
