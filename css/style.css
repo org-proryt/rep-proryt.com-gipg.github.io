@@ -197,7 +197,7 @@ a:focus, a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-    min-height: 800px;
+    min-height: 400px;
 }
 
 .slider-img-2 {
@@ -207,7 +207,7 @@ a:focus, a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-    min-height: 800px;
+    min-height: 400px;
 }
 
 .slider-img-3 {
@@ -217,7 +217,7 @@ a:focus, a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-    min-height: 800px;
+    min-height: 400px;
 }
 
 .slider_banner_info {
@@ -564,21 +564,21 @@ nav.navbar.navbar-expand-lg.navbar-light {
   
 }
 .navbar-light .navbar-brand {
-    color: #fff;
+    color: #024c76;
 	font-size:50px;
 	    letter-spacing: 1px;
 }
 .navbar-light .navbar-nav .nav-link {
-    color: #fff;
+    color: #280696;
     font-size: 15px;
     letter-spacing: 1px;
 	margin:0 15px;
 }
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: #fff;
+    color: #27822e;
 }
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-    color: #fff;
+    color: #024c76;
 }
 /** Effects **/
 /*-- login --*/
@@ -1193,13 +1193,25 @@ p.w3_dwn {
 .w3l_l1 {
     text-align: center;
 }
+i.fa.fa-person-shelter {
+    font-size: 50px;
+    color: #000;
+    margin-bottom: 20px;
+	color:#000;
+}
 i.fa.fa-crosshairs {
     font-size: 50px;
     color: #000;
     margin-bottom: 20px;
 	color:#000;
 }
-i.fa.fa-eye {
+i.fa.fa-paint-roller {
+    font-size: 50px;
+    color: #000;
+    margin-bottom: 20px;
+	color:#000;
+}
+i.fa.fa-plug {
 	font-size: 50px;
     color: #000;
     margin-bottom: 20px;
