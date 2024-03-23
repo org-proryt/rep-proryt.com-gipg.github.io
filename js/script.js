@@ -1,53 +1,79 @@
-jQuery.noConflict();
-jQuery(document).ready(function($){
-								
-							
-function lightboxPhoto() {
-	
-	jQuery("a[data-gal^='prettyPhoto']").prettyPhoto({
-			animationSpeed:'fast',
-			slideshow:5000,
-			theme:'light_rounded',
-			show_title:false,
-			overlay_gallery: false
-		});
-	
-	}
-	
-		if(jQuery().prettyPhoto) {
-	
-		lightboxPhoto(); 
-			
-	}
-	
-	
-if (jQuery().quicksand) {
+(function ($) {
 
- 	// Clone applications to get a second collection
-	var $data = $(".portfolio-area").clone();
-	
-	//NOTE: Only filter on the main portfolio page, not on the subcategory pages
-	$('.portfolio-categ li').click(function(e) {
-		$(".filter li").removeClass("active");	
-		// Use the last category class as the category to filter by. This means that multiple categories are not supported (yet)
-		var filterClass=$(this).attr('class').split(' ').slice(-1)[0];
-		
-		if (filterClass == 'all') {
-			var $filteredData = $data.find('.portfolio-item2');
-		} else {
-			var $filteredData = $data.find('.portfolio-item2[data-type=' + filterClass + ']');
-		}
-		$(".portfolio-area").quicksand($filteredData, {
-			duration: 600,
-			adjustHeight: 'auto'
-		}, function () {
+  "use strict";
 
-				lightboxPhoto();
-						});		
-		$(this).addClass("active"); 			
-		return false;
-	});
-	
-}//if quicksand
 
-});
+  $(document).ready(function () {
+
+
+
+    //testimonial swiper
+
+    var swiper = new Swiper(".testimonial-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1400: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      }
+    });
+
+    window.addEventListener("load", (event) => {
+      //isotope
+      $('.isotope-container').isotope({
+        // options
+        itemSelector: '.item',
+        layoutMode: 'masonry',
+      });
+
+
+
+      // Initialize Isotope
+      var $container = $('.isotope-container').isotope({
+        // options
+        itemSelector: '.item',
+        layoutMode: 'masonry',
+      });
+
+      $(document).ready(function () {
+        //active button
+        $('.filter-button').click(function () {
+          $('.filter-button').removeClass('active');
+          $(this).addClass('active');
+        });
+      });
+
+      // Filter items on button click
+      $('.filter-button').click(function () {
+        var filterValue = $(this).attr('data-filter');
+        if (filterValue === '*') {
+          // Show all items
+          $container.isotope({ filter: '*' });
+        } else {
+          // Show filtered items
+          $container.isotope({ filter: filterValue });
+        }
+      });
+
+    });
+
+
+
+  });
+
+
+})(jQuery);
