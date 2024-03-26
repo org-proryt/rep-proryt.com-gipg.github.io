@@ -142,6 +142,37 @@ a {
   --bs-btn-disabled-bg: #fff;
   --bs-btn-disabled-border-color: #fff;
 }
+/* Side Menu Styles */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px; /* Adjust width as needed */
+  background-color: #f8f9fa; /* Background color for the side menu */
+  overflow-y: auto; /* Enable scrolling if the menu items exceed the height */
+}
+
+.side-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  padding: 10px 15px;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #333; /* Text color for menu items */
+  display: block;
+}
+
+.side-menu a:hover {
+  background-color: #e9ecef; /* Background color on hover */
+}
+
 
 .btn-primary {
   background-image: linear-gradient(to right, #13c684 0%, #0dcaf0 51%, #C62813 100%);
